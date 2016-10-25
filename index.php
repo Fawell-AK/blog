@@ -25,25 +25,24 @@ if(!$connection || !$db)
 	exit(mysqli_error());
 }
 
-$result = mysqli_query(" 
-                       SELECT * FROM news
-					   ORDER BY id DESC
-                       ");
-
+    $result = mysqli_query("
+                               SELECT * FROM news
+                               ORDER BY id DESC;
+                               ");
 mysqli_close();
-
-while($row = mysqli_fetch_array($result)){
-	echo $row ['title']."<br>";
-}  
 ?>
+<?php
 
+    while($row = mysqli_fetch_array($result))
+        echo $row ['title']."<br>"
+
+?>
 <h1><?php $row['title']?></h1>
 <p><?php $row['text']?></p>
 <p><?php $row['img']?></p>
 <p>Дата:<?php $row['data']?></p>
 <p>Автор новости:<?php $row['author']?></p> 
 <hr/>
-
 
 </section>
 
