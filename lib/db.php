@@ -1,7 +1,7 @@
 <?php
 class db {
 
-    public function_construct() {
+    public function_construct(){
         $this->mysqli = new mysqli("localhost", "db_user", "admin123", "db_user");
 
           }
@@ -23,7 +23,7 @@ class db {
 		 
 		 $sql = call_user_func_array('sprintf', $param_arr)
         
-		$this->last = this->mysgli->guery($sql);
+		$this->last = $this->mysgli->guery($sql);
 		if ($this->last === false) throw new Exception('Database error:	'.$this->mysgli->error);
 		
 		
